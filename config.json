@@ -1,0 +1,55 @@
+{
+  "templates": {
+    "fge-comunicado": {
+      "name": "FGE · Comunicado",
+      "width": 1080,
+      "baseHeight": 357.52,
+      "minHeight": 357.52,
+      "markers": {
+        "body": "{{CUERPO}}",
+        "signature": "{{FIRMA}}",
+        "date": "{{FECHA}}"
+      },
+      "text": {
+        "x": 153.41,
+        "y": 181,
+        "width": 825,
+        "fontFamily": "Raleway, Arial, sans-serif",
+        "bodySize": 21,
+        "bodyLineHeight": 25.8,
+        "paragraphGap": 24,
+        "color": "#333333"
+      },
+      "signature": {
+        "fontSize": 18,
+        "lineHeight": 22,
+        "fontWeight": 900,
+        "color": "#293170",
+        "gapBefore": 34,
+        "uppercase": true
+      },
+      "date": {
+        "fontSize": 18,
+        "lineHeight": 22,
+        "fontWeight": 400,
+        "color": "#333333",
+        "gapBefore": 2
+      },
+      "bar": {
+        "enabled": true,
+        "x": 67.86,
+        "y": 156.73,
+        "width": 20.58,
+        "radius": 10.29,
+        "bottomMargin": 40,
+        "minHeight": 115,
+        "colors": [
+          "#2264cd",
+          "#5a80ff",
+          "#8fd1e7"
+        ]
+      },
+      "bottomPadding": 42
+    }
+  }
+}

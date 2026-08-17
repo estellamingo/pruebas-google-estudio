@@ -1,0 +1,133 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daedalus</title>
+<link rel="stylesheet" href="css/fonts.css?v=1300">
+<link rel="stylesheet" href="css/styles.css?v=1300"><style>
+.suite-nav{height:52px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;background:#11141a;color:#fff;border-bottom:1px solid #303641;font-family:Arial,sans-serif;position:sticky;top:0;z-index:999}.suite-nav a{color:#fff;text-decoration:none;font-size:12px;font-weight:700}.suite-nav span{font-size:12px;color:#aab2bd}.panel{top:70px!important}@media(max-width:700px){.suite-nav span{display:none}.suite-nav{padding:0 14px}.suite-nav a{font-size:11px}}
+
+:root{--suite-bg:#0f1115;--suite-panel:#171a20;--suite-panel2:#20242c;--suite-line:#303641;--suite-text:#f3f5f7;--suite-muted:#9ca6b4;--suite-accent:#e5002b}
+body{background:var(--suite-bg);color:var(--suite-text);font-family:Montserrat,Raleway,system-ui,sans-serif}
+.suite-nav{height:52px;padding:0 22px;background:#11141a;border-color:var(--suite-line)}
+.app{grid-template-columns:390px 1fr;gap:0;padding:0;min-height:calc(100vh - 52px)}
+.panel{top:52px!important;align-self:start;height:calc(100vh - 52px);overflow:auto;border:0;border-right:1px solid var(--suite-line);border-radius:0;background:#13161b;padding:18px;color:var(--suite-text)}
+.panel h1{font-size:15px;margin-bottom:20px}.panel label{font-size:11px;color:#c8ced7}.panel textarea,.panel input,.panel select{background:#0f1217;color:var(--suite-text);border:1px solid var(--suite-line);border-radius:8px}.panel textarea{height:330px}.panel button{border-radius:8px;background:var(--suite-accent);width:100%}.panel button.secondary{background:var(--suite-panel2)}.panel button.tertiary{background:transparent;border:1px solid var(--suite-line)}.panel .hint{color:var(--suite-muted)}
+.stage{border-radius:0;background:#1a1e25;padding:20px;min-height:calc(100vh - 52px)}
+.startup-status{background:#20242c;color:var(--suite-muted)}
+@media(max-width:900px){.app{grid-template-columns:1fr}.panel{position:static;height:auto;border-right:0;border-bottom:1px solid var(--suite-line)}.stage{min-height:auto}}
+</style>
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#111827">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Daedalus">
+<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+
+
+<style>
+@media (max-width: 768px){
+  header a, .topbar a, .nav a, .nav-button, .back-link {
+    font-size: 110% !important;
+    min-height: 48px !important;
+  }
+}
+</style>
+
+
+<style>
+/* Render Consistency 14.4.2
+   El comunicado siempre se compone sobre un lienzo lógico de 1080 px.
+   iOS/Android no pueden aplicar text autosizing dentro del arte, porque eso
+   cambia saltos de línea, altura dinámica y por tanto el PNG final. */
+html, body{
+  -webkit-text-size-adjust:none !important;
+  text-size-adjust:none !important;
+}
+#artboard, #artboard *, #textLayer, #textLayer *{
+  -webkit-text-size-adjust:none !important;
+  text-size-adjust:none !important;
+}
+#artboard{
+  width:1080px;
+  min-width:1080px;
+  max-width:1080px;
+}
+</style>
+
+<style>
+/* Responsive Cleanup 14.2 */
+@media(max-width:900px){
+  html,body{overflow-x:hidden}
+  .suite-nav{
+    position:sticky;top:0;z-index:30;height:52px;padding:0 14px;gap:10px
+  }
+  .suite-nav a{min-height:44px;display:flex;align-items:center;font-size:12px}
+  .suite-nav span{font-size:11px}
+  .app{display:flex!important;flex-direction:column!important;min-width:0}
+  .panel{
+    width:100%!important;position:static!important;height:auto!important;
+    max-height:none!important;overflow:visible!important;padding:14px!important
+  }
+  .panel textarea{height:230px!important;min-height:180px}
+  .stage{
+    width:100%!important;min-width:0!important;min-height:0!important;
+    padding:12px 10px 24px!important;overflow:hidden!important
+  }
+  .artboard-wrap{
+    width:100%!important;max-width:100%!important;overflow:hidden!important;
+    background:transparent!important;box-shadow:none!important
+  }
+  .artboard{transform-origin:top left!important}
+  input,textarea,select,button{font-size:16px!important}
+  button,input,textarea,select{min-height:44px}
+}
+@media(max-width:520px){
+  .suite-nav span{display:none}
+  .panel{padding:12px!important}
+  .stage{padding-left:8px!important;padding-right:8px!important}
+}
+</style>
+
+</head><body><nav class="suite-nav"><a href="index.html">← Inicio</a><span>Generador de comunicados</span><a href="titulares.html">Ir a titulares</a></nav>
+<main class="app"><aside class="panel"><h1>Generador de comunicados</h1>
+<label>Plantilla</label><select id="templateSelect"></select>
+<label>Cuerpo</label><textarea id="bodyInput"></textarea>
+<label>Firma</label><input id="signatureInput" type="text">
+<label>Fecha</label><input id="dateInput" type="text">
+<div class="actions"><button id="exportPngBtn">Exportar PNG</button></div>
+<div id="startupStatus" class="startup-status">Iniciando…</div>
+<p class="hint">Usa *texto* para negrita. Usa - o • para viñetas, 1. para listas numeradas, > para sangría y >> para doble sangría.</p>
+</aside><section class="stage"><div class="artboard-wrap"><div id="artboard" class="artboard">
+<div id="templateLayer" class="template-layer"></div><div id="extensionLayer" class="extension-layer"></div><div id="barExtension" class="bar-extension"></div>
+<div id="textLayer" class="text-layer"><div id="bodyText"></div><div id="signatureText"></div><div id="dateText"></div></div>
+</div></div></section></main>
+<script src="assets/vendor/jszip.min.js?v=1300"></script><script src="js/core/templateStore.js?v=1300"></script><script src="js/core/parser.js?v=1442"></script><script src="js/core/engine.js?v=1300"></script><script src="js/exporters/exporter.js?v=1442"></script><script src="js/app.js?v=1300"></script>
+<script>
+(function(){
+  const wrap=document.querySelector('.artboard-wrap');
+  const art=document.getElementById('artboard');
+  function fitArtboard(){
+    if(!wrap||!art) return;
+    if(window.innerWidth>900){ art.style.transform=''; wrap.style.height=''; return; }
+    const available=Math.max(240, Math.min(wrap.clientWidth, window.innerWidth-20));
+    const scale=Math.min(1, available/1080);
+    art.style.transform=`scale(${scale})`;
+    const naturalHeight=parseFloat(getComputedStyle(art).height)||art.scrollHeight||358;
+    wrap.style.height=Math.ceil(naturalHeight*scale)+'px';
+  }
+  window.addEventListener('resize',fitArtboard,{passive:true});
+  new MutationObserver(()=>requestAnimationFrame(fitArtboard)).observe(art,{attributes:true,childList:true,subtree:true});
+  window.addEventListener('load',()=>setTimeout(fitArtboard,100));
+  fitArtboard();
+})();
+</script>
+<script>
+// TEST BUILD: no registrar Service Worker. Evita caché/PWA mientras validamos móvil.
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    const here = location.origin + location.pathname.replace(/[^/]+$/, '');
+    regs.forEach(reg => { if (reg.scope === here) reg.unregister(); });
+  }).catch(()=>{});
+}
+</script>
+
+</body></html>

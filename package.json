@@ -1,0 +1,15 @@
+{
+  "name": "daedalus",
+  "version": "1.0.0",
+  "description": "Suite institucional para generación de comunicados, titulares y condolencias.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node -e \"console.log('Build completed')\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

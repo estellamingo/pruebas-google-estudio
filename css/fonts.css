@@ -1,0 +1,14 @@
+@font-face{font-family:'Montserrat';src:url('../assets/fonts/Montserrat-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('../assets/fonts/Montserrat-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('../assets/fonts/Montserrat-ExtraBold.otf') format('opentype');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Raleway';src:url('../assets/fonts/Raleway-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Raleway';src:url('../assets/fonts/Raleway-ExtraBold.otf') format('opentype');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Raleway';src:url('../assets/fonts/Raleway-Black.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+
+@font-face{
+  font-family:'Montserrat Condolencias Black';
+  src:url('../assets/fonts/Montserrat-ExtraBold.otf') format('opentype');
+  font-style:normal;
+  font-weight:900;
+  font-display:swap;
+}

@@ -1,0 +1,19 @@
+{
+  "app": "Daedalus",
+  "version": "14.4.3-test",
+  "cache": "disabled-in-test-build",
+  "offline": true,
+  "modules": [
+    "comunicados",
+    "titulares",
+    "condolencias"
+  ],
+  "changes": [
+    "Base: V14.4.2 con render consistente de Comunicados",
+    "Condolencias: corrige cálculo de altura en móvil usando coordenadas lógicas no escaladas",
+    "Condolencias: el pie Descanse en paz vuelve a colocarse después del contenido",
+    "Condolencias: ancho, tipografía, saltos de línea y altura final independientes del tamaño del preview",
+    "Comunicados y Titulares sin cambios respecto de V14.4.2",
+    "Service Worker/PWA permanece desactivado SOLO en el repositorio de pruebas"
+  ]
+}

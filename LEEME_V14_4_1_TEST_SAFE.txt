@@ -1,0 +1,9 @@
+DAEDALUS V14.4.1 TEST SAFE
+
+Base: V14.3 estable.
+Objetivo: probar exclusivamente el hotfix móvil de Comunicados sin alterar módulos estables.
+
+IMPORTANTE:
+- Service Worker/PWA está desactivado deliberadamente en esta build de pruebas.
+- No usar esta build como producción todavía.
+- Condolencias y Titulares vienen intactos de V14.3.

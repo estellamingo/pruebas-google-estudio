@@ -1,0 +1,56 @@
+DAEDALUS V12 — INSTALACIÓN LIMPIA
+
+Esta versión está preparada para reemplazar completamente el contenido local
+del repositorio. No contiene archivos duplicados como:
+- engine (1).js
+- parser (2).js
+- exporter (4).js
+- templateStore (3).js
+
+ANTES DE BORRAR:
+1. Copia fuera del repositorio la carpeta:
+   assets/marcas
+   si contiene logos adicionales que quieras conservar.
+
+REEMPLAZO LOCAL:
+1. Abre con GitHub Desktop:
+   Repository > Show in Finder
+
+2. Dentro de la carpeta local herramientas-contenido:
+   - selecciona todo;
+   - envíalo a la Papelera;
+   - NO borres la carpeta herramientas-contenido ni la carpeta oculta .git.
+
+3. Abre este ZIP y copia TODO su contenido dentro de:
+   herramientas-contenido
+
+4. Si guardaste logos adicionales:
+   - cópialos dentro de assets/marcas;
+   - actualiza la biblioteca desde Daedalus siguiendo tu flujo habitual.
+
+5. Vuelve a GitHub Desktop.
+   Deberá mostrar archivos eliminados, nuevos y modificados.
+
+6. Summary:
+   Daedalus V12 - reconstrucción limpia
+
+7. Pulsa:
+   Commit to main
+   y después:
+   Push origin
+
+8. Espera a que GitHub Pages termine el despliegue.
+
+9. Comprueba:
+   https://estellamingo.github.io/herramientas-contenido/version.json?v=1200
+
+   Debe mostrar:
+   "version": "12.0.0"
+
+10. Prueba Comunicados:
+    https://estellamingo.github.io/herramientas-contenido/comunicado.html?v=1200
+
+IMPORTANTE:
+- No arrastres la carpeta Daedalus_V12 como una subcarpeta.
+- Copia los archivos que están dentro directamente a la raíz del repositorio.
+- La carpeta .git es oculta y debe conservarse.

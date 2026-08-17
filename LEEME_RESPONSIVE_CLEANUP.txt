@@ -1,0 +1,26 @@
+DAEDALUS V14.2 — RESPONSIVE CLEANUP
+
+Esta es la versión solicitada como "V13 Responsive Cleanup", pero se numeró
+14.2 para no retroceder desde la base estable 14.1.
+
+Objetivo:
+Corregir únicamente la experiencia en teléfono/tablet sin cambiar la lógica
+de generación o exportación.
+
+Cambios:
+- Condolencias: preview completo dentro del ancho del teléfono.
+- Condolencias: se elimina el doble escalado que producía recortes/desbordes.
+- Comunicados: mejor ajuste del lienzo al ancho disponible.
+- Titulares: panel, workspace, canvas y herramientas se apilan en móvil.
+- Controles táctiles con altura mínima de 44 px.
+- Inputs a 16 px para evitar zoom automático en iPhone.
+
+PRUEBA LOCAL
+http://localhost:8000/condolencias.html?v=1420
+http://localhost:8000/comunicado.html?v=1420
+http://localhost:8000/titulares.html?v=1420
+
+IMPORTANTE
+Esta entrega es COMPLETA.
+Conserva .git y reemplaza todo el contenido visible del repositorio local.
+No copies carpetas parciales sobre Finder.

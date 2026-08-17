@@ -1,0 +1,22 @@
+DAEDALUS V14 — MÓDULO CONDOLENCIAS
+
+Prueba local:
+http://localhost:8000/condolencias.html?v=1400
+
+Reglas:
+- Ancho fijo: 1080 px
+- Margen general: 50 px
+- Fecha independiente
+- Un único editor de contenido
+- Regular: Montserrat 24 px
+- Bold: Montserrat Bold 24 px
+- Black: 40 px
+- Tracking: 0
+- Alto dinámico
+- El pie institucional se mueve según el contenido
+- Exportar PNG: descarga directa en desktop / Compartir en móvil
+
+IMPORTANTE:
+Esta entrega es una versión COMPLETA. Para evitar problemas de Finder,
+no reemplaces carpetas parciales. Si vas a probarla sobre el repositorio local,
+conserva .git y reemplaza todo el contenido visible por esta versión completa.

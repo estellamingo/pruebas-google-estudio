@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "AAA",
+    "archivo": "AAA.png"
+  },
+  {
+    "nombre": "Amistad",
+    "archivo": "amistad.png"
+  },
+  {
+    "nombre": "Blanqueo Jr",
+    "archivo": "blanqueo-jr.png"
+  },
+  {
+    "nombre": "Celu",
+    "archivo": "celu.png"
+  },
+  {
+    "nombre": "En Familia",
+    "archivo": "en-familia.png"
+  },
+  {
+    "nombre": "Euro2024",
+    "archivo": "euro2024.png"
+  },
+  {
+    "nombre": "Metastasis",
+    "archivo": "metastasis.png"
+  },
+  {
+    "nombre": "Pampa",
+    "archivo": "pampa.png"
+  },
+  {
+    "nombre": "Plaga",
+    "archivo": "plaga.png"
+  },
+  {
+    "nombre": "Purga",
+    "archivo": "purga.png"
+  }
+]

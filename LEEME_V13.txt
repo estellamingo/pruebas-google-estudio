@@ -1,0 +1,28 @@
+DAEDALUS V13 — EXPORTACIÓN AUTOMÁTICA DE COMUNICADOS
+
+Al pulsar Exportar PNG:
+
+- Siempre se genera el comunicado original de 1080 px de ancho y alto variable.
+- Si su alto es menor que 1350 px, se genera además una adaptación 1080 × 1350.
+- La adaptación centra verticalmente el comunicado y rellena el espacio superior
+  e inferior con azul institucional.
+- Si el original mide 1350 px o más, se exporta únicamente el original.
+
+ESCRITORIO
+- Dos imágenes: descarga un ZIP.
+- Una imagen: descarga el PNG directamente.
+
+MÓVIL
+- Comparte una o dos imágenes en una sola hoja de compartir.
+
+PRUEBA LOCAL
+1. Sustituye los archivos indicados en tu copia local.
+2. Con el servidor local abierto, entra en:
+   http://localhost:8000/comunicado.html?v=1300
+3. Prueba un comunicado corto y uno largo.
+
+ARCHIVOS MODIFICADOS
+- comunicado.html
+- js/exporters/exporter.js
+- service-worker.js
+- version.json

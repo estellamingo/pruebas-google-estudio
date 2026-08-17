@@ -1,0 +1,27 @@
+DAEDALUS V14.4.2 TEST — CONSISTENCIA DE RENDER
+
+Base: V14.4.1 TEST SAFE.
+
+Problema corregido:
+En iPhone/Android el navegador podía aplicar text autosizing al comunicado.
+Aunque el artboard seguía midiendo 1080 px, Safari ampliaba visualmente el texto
+dentro del documento, alterando saltos de línea, scrollHeight y altura final.
+El mismo contenido podía producir un PNG distinto al de escritorio.
+
+Regla de esta versión:
+- Ancho lógico del comunicado: SIEMPRE 1080 px.
+- Alto: SIEMPRE dinámico según el contenido.
+- El preview móvil puede escalarse solo para verse en pantalla.
+- El escalado del preview NO altera tipografía, wrapping ni altura lógica.
+- iOS/Android no pueden aplicar text autosizing dentro del artboard.
+
+Prueba de aceptación:
+1. Pegar exactamente el mismo comunicado en escritorio y teléfono.
+2. Generar el ORIGINAL en ambos.
+3. Los saltos de línea deben ser iguales.
+4. La altura en píxeles debe ser igual.
+5. El 4:5, si se genera, debe contener exactamente el mismo original centrado.
+
+IMPORTANTE:
+Service Worker/PWA permanece desactivado en esta build de pruebas.
+No subir a producción hasta comparar móvil vs escritorio.

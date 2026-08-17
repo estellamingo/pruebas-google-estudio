@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Daedalus · Condolencias</title>
+<link rel="stylesheet" href="css/fonts.css?v=1443">
+<style>
+:root{
+  --bg:#0f1115;--panel:#171b21;--panel2:#20252d;--line:#303743;
+  --text:#f7f8fa;--muted:#aab2bf;--accent:#f4002f;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Montserrat,Arial,sans-serif}
+body{overflow-x:hidden}
+.topbar{height:48px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:#090b0e;font-size:13px}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.layout{display:grid;grid-template-columns:330px minmax(0,1fr);min-height:calc(100vh - 48px)}
+.panel{border-right:1px solid var(--line);padding:22px 18px;background:#11151a}
+.panel h1{font-size:18px;margin:0 0 6px}
+.panel .intro{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 20px}
+label{display:block;font-size:12px;font-weight:700;margin:14px 0 7px}
+input[type="text"],input[type="date"]{
+  width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 12px;
+  background:#0d1014;color:#fff;font:inherit
+}
+.toolbar{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:6px;margin-bottom:8px}
+.toolbar button,.export{
+  border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:#fff;
+  font-weight:800;padding:10px 8px;cursor:pointer
+}
+.toolbar button:hover{filter:brightness(1.12)}
+.editor{
+  width:100%;min-height:390px;max-height:52vh;overflow:auto;border:1px solid var(--line);
+  border-radius:10px;background:#0d1014;padding:14px;outline:none;
+  font-family:Montserrat,Arial,sans-serif;font-size:15px;line-height:1.55;color:#fff;
+  white-space:pre-wrap
+}
+.editor:empty:before{content:"Pega aquí el texto de WhatsApp…";color:#737c89}
+.help{font-size:11px;line-height:1.45;color:var(--muted);margin:9px 0 16px}
+.export{width:100%;background:var(--accent);border-color:var(--accent);font-size:14px}
+.status{margin-top:10px;padding:9px 10px;border-radius:8px;background:#20252d;color:#aab2bf;font-size:11px}
+.stage{padding:28px;overflow:hidden;display:flex;align-items:flex-start;justify-content:center;min-width:0}
+.preview-viewport{position:relative;flex:0 0 auto;overflow:visible}
+.preview-shell{position:absolute;left:0;top:0;width:1080px;transform-origin:top left}
+.artboard{
+  position:relative;width:1080px;background:#fff;color:#111;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,255,255,.07);
+}
+.static-header{position:absolute;left:0;top:0;width:1080px;height:210px;overflow:hidden;pointer-events:none}
+.static-header img{width:1080px;height:760px;display:block}
+.static-footer{position:absolute;left:0;width:1080px;height:160px;overflow:hidden;pointer-events:none}
+.static-footer img{width:1080px;height:760px;display:block;transform:translateY(-600px)}
+.date-render{
+  position:absolute;left:50px;top:38px;font-family:Raleway,Montserrat,Arial,sans-serif;
+  font-size:17.68px;font-weight:400;line-height:1;letter-spacing:0;color:#111
+}
+.content-render{
+  position:absolute;left:50px;right:50px;top:230px;
+  text-align:center;font-family:Montserrat,Arial,sans-serif;color:#111;letter-spacing:0;
+}
+.content-block{margin:0 0 32px;display:flex;flex-direction:column;align-items:center}
+.content-block:last-child{margin-bottom:0}
+.content-line{display:inline-block;white-space:pre;text-align:center}
+.content-render .regular{font-size:24px;font-weight:400;line-height:34px}
+.content-render .bold{font-size:24px;font-weight:700;line-height:34px}
+.content-render .black{font-size:40px;font-family:'Montserrat Condolencias Black',Montserrat,Arial,sans-serif;font-weight:900;line-height:48px}
+@media(max-width:900px){
+  body{overflow-x:hidden}
+  .topbar{
+    position:sticky;top:0;z-index:20;height:52px;padding:0 14px;
+    gap:10px;background:#090b0e
+  }
+  .topbar a{font-size:12px;min-height:44px;display:flex;align-items:center}
+  .topbar span{font-size:12px}
+  .layout{display:flex;flex-direction:column;min-height:0}
+  .panel{
+    width:100%;border-right:0;border-bottom:1px solid var(--line);
+    padding:16px 14px
+  }
+  .panel .intro{margin-bottom:14px}
+  input[type="text"],input[type="date"],button,.editor{font-size:16px}
+  .toolbar button,.export{min-height:44px;touch-action:manipulation}
+  .editor{min-height:240px;max-height:46vh;padding:12px}
+  .help{margin-bottom:12px}
+  .stage{
+    width:100%;padding:14px 10px 24px;overflow:hidden;
+    justify-content:center;background:#0f1115
+  }
+  .preview-viewport{max-width:100%}
+}
+@media(max-width:520px){
+  .toolbar{grid-template-columns:1fr 1fr 1fr 44px}
+  .toolbar button{padding:9px 5px;font-size:13px}
+  .panel h1{font-size:17px}
+  .stage{padding-left:8px;padding-right:8px}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">← Inicio</a>
+  <span>Condolencias</span>
+  <a href="comunicado.html">Ir a comunicados</a>
+</div>
+
+<main class="layout">
+  <aside class="panel">
+    <h1>Condolencias</h1>
+    <p class="intro">Pega el texto completo, selecciona fragmentos y aplica la jerarquía que corresponda.</p>
+
+    <label for="dateInput">Fecha</label>
+    <input id="dateInput" type="text" value="23 de abril de 2026" autocomplete="off">
+
+    <label>Texto</label>
+    <div class="toolbar">
+      <button type="button" data-style="regular">Regular</button>
+      <button type="button" data-style="bold">Bold</button>
+      <button type="button" data-style="black">Black</button>
+      <button type="button" id="undoBtn" title="Deshacer">↶</button>
+    </div>
+
+    <div id="editor" class="editor" contenteditable="true" spellcheck="true"></div>
+    <p class="help">
+      Regular: Montserrat 24 px · Bold: Montserrat Bold 24 px · Black: 40 px.
+      Tracking 0. Usa saltos de línea para separar bloques.
+    </p>
+
+    <button id="exportBtn" class="export" type="button">Exportar PNG</button>
+    <div id="status" class="status">Listo.</div>
+  </aside>
+
+  <section class="stage">
+    <div id="previewViewport" class="preview-viewport">
+      <div id="previewShell" class="preview-shell">
+        <div id="artboard" class="artboard">
+        <div class="static-header"><img src="assets/templates/condolencias-base.svg?v=1455" alt=""></div>
+        <div id="dateRender" class="date-render"></div>
+        <div id="contentRender" class="content-render"></div>
+        <div id="footer" class="static-footer"><img src="assets/templates/condolencias-base.svg?v=1455" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/vendor/jszip.min.js"></script>
+<script src="js/condolencias.js?v=1455"></script>
+</body>
+</html>

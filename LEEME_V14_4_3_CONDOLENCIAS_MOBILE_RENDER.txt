@@ -1,0 +1,25 @@
+DAEDALUS V14.4.3 TEST — CONDOLENCIAS MOBILE RENDER FIX
+
+Base: V14.4.2 TEST CONSISTENCIA RENDER.
+
+BUG CORREGIDO
+En móvil, el preview de Condolencias se muestra con transform: scale(...).
+La función de layout medía la altura del contenido con getBoundingClientRect(),
+que devuelve el tamaño VISUAL ya escalado. Por eso el sistema calculaba una
+altura menor, subía el pie «Descanse en paz» y lo superponía sobre el texto.
+
+CORRECCIÓN
+La altura del contenido ahora se obtiene con scrollHeight, que conserva las
+coordenadas lógicas reales del documento (1080 px de ancho), sin importar la
+escala del preview en teléfono, tablet o escritorio.
+
+NO SE MODIFICA
+- Comunicados
+- Titulares
+- Exportación de Comunicados
+- Lógica de altura dinámica de Condolencias salvo su medición
+
+PRUEBA DE APROBACIÓN
+Usar exactamente el mismo texto de condolencias en escritorio y teléfono.
+Ambos PNG deben tener los mismos saltos de línea, la misma posición del pie y
+la misma altura final.

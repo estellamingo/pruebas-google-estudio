@@ -1,0 +1,29 @@
+ESTRUCTURA LIMPIA DAEDALUS V12
+
+/
+├── index.html
+├── comunicado.html
+├── titulares.html
+├── condolencias.html
+├── manifest.webmanifest
+├── config.json
+├── service-worker.js
+├── version.json
+├── css/
+│   ├── fonts.css
+│   └── styles.css
+├── js/
+│   ├── app.js
+│   ├── core/
+│   │   ├── engine.js
+│   │   ├── parser.js
+│   │   └── templateStore.js
+│   └── exporters/
+│       └── exporter.js
+└── assets/
+    ├── fonts/
+    ├── icons/
+    ├── marcas/
+    ├── templates/
+    ├── vendor/
+    └── logo-fge.svg

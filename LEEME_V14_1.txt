@@ -1,0 +1,19 @@
+DAEDALUS V14.1 — CONDOLENCIAS / ALTURA DINÁMICA CORREGIDA
+
+Problema corregido:
+La V14 mantenía el pie de condolencias en su posición original de 600 px,
+por lo que un texto corto dejaba demasiado espacio blanco.
+
+Nueva lógica:
+- El encabezado permanece fijo.
+- El bloque de texto conserva sus jerarquías y márgenes.
+- El pie sube cuando el texto es corto.
+- El pie baja cuando el texto crece.
+- Se mantiene un mínimo visual para que la pieza no quede excesivamente comprimida.
+- La exportación usa exactamente la misma altura que la vista previa.
+
+Prueba local:
+http://localhost:8000/condolencias.html?v=1410
+
+Esta entrega es COMPLETA para evitar problemas de Finder con carpetas parciales.
+Conserva la carpeta .git y reemplaza todo el contenido visible.
